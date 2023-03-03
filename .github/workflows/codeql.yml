@@ -28,10 +28,7 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-        queries: |
-          # Scan for all JavaScript and Java-related vulnerabilities
-          javascript.ql
-          java.ql
+        queries: 'code-scanning-security-extended, security-extended, taint-tracking'
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
     - name: Perform CodeQL Analysis
